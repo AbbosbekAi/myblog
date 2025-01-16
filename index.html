@@ -1,52 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Assalomu alaykum saytimizga hush kelibsiz!</h1>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h3>Shaxsiy blog sayt</h3>
-    <img src="—Pngtree—black gold background golden streamer_974741.jpg" alt="image" style="width:300px; height:auto;">
-
-    <title>My Blog</title>
+    <title>Mening Blogim</title>
     <link rel="stylesheet" href="style.css"> <!-- CSS faylini ulash -->
     <style>
         body {
+            height: 100%;
+            background: linear-gradient(to right, #ff00ff, #d0ff00); /* Gradients ranglar */
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header styling with the menu */
+        header {
+            background-color: #008080ac; /* Shaffof qora fon */
+            color: white;
+            padding: 20px;
             text-align: center;
-            padding: 50px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #FFD700; /* Hover effekti */
         }
 
         h1 {
-            color: #262626;
+            font-size: 2.5em;
         }
-        h3 {
-            color: rgb(110, 110, 110);
-        }
-    </style>
 
+        h3 {
+            color: rgb(0, 0, 0);
+        }
+
+        main {
+            max-height: 80vh; /* Ekraning 80% balandligi */
+            overflow-y: scroll; /* Vertical scroll qo'shish */
+            padding: 20px;
+            text-align: center;
+            min-height: 800px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8); /* Shaffof qora fon */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            position: relative;
+        }
+        
+
+        h2 {
+            font-size: 2em;
+        }
+
+        /* Smooth scroll (yumshoq surish effekti) */
+        html {
+            scroll-behavior: smooth; /* Foydalanuvchi pastga surganida smooth scroll */
+        }
+
+        /* Mobil qurilmalar uchun scrollni yaxshilash */
+        @media (max-width: 768px) {
+            body {
+                overflow-y: scroll; /* Mobil qurilmalarda scrollni yoqish */
+            }
+        }
+
+        /* Kompyuter uchun scrollni sozlash */
+        @media (min-width: 769px) {
+            body {
+                overflow-y: auto; /* Kompyuterda oddiy scroll */
+            }
+        }
+        
+
+    </style>
 </head>
 <body>
-    <p>Bu sayt hozircha test rejimda ishlamoqda!</p>
-    <section id="video">
-        <h2>Bizning YouTube Kanalimizdan Video</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/p0ItPcqqXog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>     
-    <section id="video">
-        <h2>Bizning YouTube Kanalimizdan Video</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/p0ItPcqqXog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>     
-</body>
-<body>
+
+<header>
+    <h1>Mening Blog saytimga hush kelibsiz!</h1>
+    <h3>Shaxsiy Blog sayt</h3>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Bosh menu</a></li>
+            <li><a href="#" onclick="showSection('about')">Haqida</a></li>
+            <li><a href="#" onclick="showSection('contact')">FAQ</a></li>
+            <li><a href="#" onclick="showSection('download')">O'yinlar</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" style="display: none;">
+        <h2>Bosh menu</h2>
+        <p>Siz nimalarni izlayapsiz?</p>
+        <p>Bu yerda sizga kerakli videolar toplami mavjud</p>
+        <iframe width="720" height="360" src="https://www.youtube.com/embed/p0ItPcqqXog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img src="—Pngtree—black gold background golden streamer_974741.jpg" alt="Home Image" style="width: 500px;"> 
+    </section>
+
+    <section id="about" style="display: none;">
+        <h2>About</h2>
+        <p>This is the about section. Here you can add information about yourself.</p>
+        <p>Write about your background, your passions, and what your blog is about.</p>
+    </section>
     <section id="download">
-        <h2>Yuklab olish</h2>
-        <div class="download-item">
+        <h1>O'yinlar</h1>
+        <div style="text-align: left;">
           <h3>SimulyatorGTX</h3>
-          <p>Versiya: 1.0 | Fayl hajmi: 50 MB</p>
+          <p>Versiya: 6.8 beta | Fayl hajmi: 74.3 MB</p>
           <p>Bu o'yin shaharni kashf qilish uchun yaratilgan!</p>
-          <a href="game-download-link.apk" download class="btn">Yuklab olish</a>
+          <a href="https://drive.google.com/file/d/16Y7x_vryyOVJq54ezqLrWSa2SzP-18L4/view?usp=sharing" download>
+            <button>Yuklab olish</button>
+          </a>
         </div>
-      </section>
-      
+    </section>
+    <section id="contact" style="display: none;">
+        <h2>FAQ</h2>
+        <p>Sizga qanday yordam kerak telegram orqali menga xabar yuboring!</p>
+        <a href="https://t.me/zuPREDATOR">
+            <button>Telegramni ochish</button>
+    </section>
+    <section id="open">
+        <h1>Ochish</h1>
+        <div class="open-telegram">
+          <p>Bu o'yin shaharni kashf qilish uchun yaratilgan!</p>
+          <a href="https://t.me/zuPREDATOR">
+            <button>Telegramni ochish</button>
+          </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; Blog sayt 2025.01.14 yaratildi.</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.style.display = 'none';  // Yashirish
+        });
+
+        const activeSection = document.getElementById(sectionId);
+        if (activeSection) {
+            activeSection.style.display = 'block';  // Ko'rsatish
+        }
+    }
+
+    // Initially show the Home section
+    showSection('home');
+
+</script>
+<script>
+     window.addEventListener("scroll", function() {
+        let footer = document.querySelector("footer");
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+            footer.classList.add("fixed");
+        } else {
+            footer.classList.remove("fixed");
+        }
+    });
+</script>
+
 </body>
 </html>
