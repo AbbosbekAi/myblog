@@ -1,0 +1,59 @@
+/* Saytning orqa fonini rasm bilan o'zgartirish */
+body {
+    
+    background: linear-gradient(to right, #c45fff, #e4fe7b); /* Gradients ranglar */
+}
+/* Mobil qurilmalar uchun scrollni yaxshilash */
+@media (max-width: 768px) {
+    body {
+        overflow-y: scroll; /* Mobil qurilmalarda scrollni yoqish */
+    }
+}
+
+/* Kompyuter uchun scrollni sozlash */
+@media (min-width: 769px) {
+    body {
+        overflow-y: auto; /* Kompyuterda oddiy scroll */
+    }
+}
+
+main {
+    max-height: 80vh; /* Ekraning 80% balandligi */
+    overflow-y: scroll; /* Vertical scroll qo'shish */
+    padding: 20px;
+}
+
+/* Smooth scroll (yumshoq surish effekti) */
+html {
+    scroll-behavior: smooth; /* Foydalanuvchi pastga surganida smooth scroll */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.6); /* Shaffof qora fon */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Shaffof qora fon */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h2 {
+    font-size: 2em;
+}
