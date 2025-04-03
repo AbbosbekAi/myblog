@@ -1,193 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mening Blogim</title>
-    <link rel="stylesheet" href="style.css"> <!-- CSS faylini ulash -->
+    <meta name="description" content="Bu sayt 18 yoshli dasturchi tomonidan yaratildi!">
+    <title>Mening Saytim</title>
     <style>
         body {
-            height: 100%;
-            background: linear-gradient(to right, #ff00ff, #d0ff00); /* Gradients ranglar */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-        }
-
-        /* Header styling with the menu */
-        header {
-            background-color: #008080ac; /* Shaffof qora fon */
-            color: white;
-            padding: 20px;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
             text-align: center;
         }
-
-        header nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        nav {
             display: flex;
             justify-content: center;
+            gap: 15px;
+            background: #222;
+            padding: 10px;
         }
-
-        header nav ul li {
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
+        nav a {
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            background: #444;
+            border-radius: 5px;
+            transition: 0.3s;
         }
-
-        header nav ul li a:hover {
-            color: #FFD700; /* Hover effekti */
+        nav a:hover {
+            background: #666;
         }
-
-        h1 {
-            font-size: 2.5em;
-        }
-
-        h3 {
-            color: rgb(0, 0, 0);
-        }
-
-        main {
-            max-height: 80vh; /* Ekraning 80% balandligi */
-            overflow-y: scroll; /* Vertical scroll qo'shish */
-            padding: 20px;
-            text-align: center;
-            min-height: 800px;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.8); /* Shaffof qora fon */
-            color: white;
-            text-align: center;
-            padding: 10px;
+        .sidebar {
             position: fixed;
-            width: 100%;
-            bottom: 0;
-            position: relative;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: #111;
+            padding-top: 60px;
+            transition: 0.3s;
         }
-        
-
-        h2 {
-            font-size: 2em;
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            text-align: left;
         }
-
-        /* Smooth scroll (yumshoq surish effekti) */
-        html {
-            scroll-behavior: smooth; /* Foydalanuvchi pastga surganida smooth scroll */
+        .sidebar a:hover {
+            background: #575757;
         }
-
-        /* Mobil qurilmalar uchun scrollni yaxshilash */
-        @media (max-width: 768px) {
-            body {
-                overflow-y: scroll; /* Mobil qurilmalarda scrollni yoqish */
-            }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
         }
-
-        /* Kompyuter uchun scrollni sozlash */
-        @media (min-width: 769px) {
-            body {
-                overflow-y: auto; /* Kompyuterda oddiy scroll */
-            }
+        .dark-mode {
+            background: #222;
+            color: white;
         }
-        
-
+        section {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Mening Blog saytimga hush kelibsiz!</h1>
-    <h3>Shaxsiy Blog sayt</h3>
+    <header>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <span>Mening Saytim</span>
+    </header>
+    
     <nav>
-        <ul>
-            <li><a href="#" onclick="showSection('home')">Bosh menu</a></li>
-            <li><a href="#" onclick="showSection('about')">Haqida</a></li>
-            <li><a href="#" onclick="showSection('contact')">FAQ</a></li>
-            <li><a href="#" onclick="showSection('download')">O'yinlar</a></li>
-        </ul>
+        <a href="#home" onclick="showSection('home')">Bosh Menu</a>
+        <a href="#games" onclick="showSection('games')">O‘yinlar</a>
+        <a href="#news" onclick="showSection('news')">News</a>
     </nav>
-</header>
+    
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" onclick="toggleMenu()">❌</span>
+        <a href="#settings">Sozlamalar</a>
+        <a href="#darkmode" onclick="toggleDarkMode()">Qorong‘i Rejim 🌙   (beta)</a>
+        <a href="#fontchange">Shrift O‘zgartirish</a>
+        <a href="faq.html" target="_blank">FAQ</a>
+        <a href="#contact">Yaratuvchi bilan bog‘lanish</a>
+        <a href="#questions">Savollar</a>
 
-<main>
-    <section id="home" style="display: none;">
-        <h2>Bosh menu</h2>
-        <p>Siz nimalarni izlayapsiz?</p>
-        <p>Bu yerda sizga kerakli videolar toplami mavjud</p>
-        <iframe width="720" height="360" src="https://www.youtube.com/embed/p0ItPcqqXog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <img src="—Pngtree—black gold background golden streamer_974741.jpg" alt="Home Image" style="width: 500px;"> 
-    </section>
-
-    <section id="about" style="display: none;">
-        <h2>About</h2>
-        <p>This is the about section. Here you can add information about yourself.</p>
-        <p>Write about your background, your passions, and what your blog is about.</p>
-    </section>
-    <section id="download">
-        <h1>O'yinlar</h1>
-        <div style="text-align: left;">
-          <h3>SimulyatorGTX</h3>
-          <p>Versiya: 6.8 beta | Fayl hajmi: 74.3 MB</p>
-          <p>Bu o'yin shaharni kashf qilish uchun yaratilgan!</p>
-          <a href="https://drive.google.com/file/d/16Y7x_vryyOVJq54ezqLrWSa2SzP-18L4/view?usp=sharing" download>
-            <button>Yuklab olish</button>
-          </a>
-        </div>
-    </section>
-    <section id="contact" style="display: none;">
-        <h2>FAQ</h2>
-        <p>Sizga qanday yordam kerak telegram orqali menga xabar yuboring!</p>
-        <a href="https://t.me/zuPREDATOR">
-            <button>Telegramni ochish</button>
-    </section>
-    <section id="open">
-        <h1>Ochish</h1>
-        <div class="open-telegram">
-          <p>Bu o'yin shaharni kashf qilish uchun yaratilgan!</p>
-          <a href="https://t.me/zuPREDATOR">
-            <button>Telegramni ochish</button>
-          </a>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; Blog sayt 2025.01.14 yaratildi.</p>
-</footer>
-
-<script>
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-            section.style.display = 'none';  // Yashirish
-        });
-
-        const activeSection = document.getElementById(sectionId);
-        if (activeSection) {
-            activeSection.style.display = 'block';  // Ko'rsatish
+    </div>
+    
+    <section id="home">Bosh menu mazmuni.</section>
+    <section id="games">O‘yinlar sahifasi.</section>
+    <section id="news">Yangiliklar bu yerda chiqadi.</section>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+            window.location.hash = sectionId;
         }
-    }
-
-    // Initially show the Home section
-    showSection('home');
-
-</script>
-<script>
-     window.addEventListener("scroll", function() {
-        let footer = document.querySelector("footer");
-        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
-            footer.classList.add("fixed");
-        } else {
-            footer.classList.remove("fixed");
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px';
+            } else {
+                sidebar.style.left = '0px';
+            }
         }
-    });
-</script>
-
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        window.onload = function () {
+            let sectionId = window.location.hash.substring(1) || 'home';
+            showSection(sectionId);
+        };
+    </script>
 </body>
 </html>
