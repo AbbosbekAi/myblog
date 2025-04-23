@@ -1,93 +1,94 @@
 <!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bu sayt 18 yoshli dasturchi tomonidan yaratildi!">
-    <title>Mening Saytim</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <span class="menu-icon" onclick="toggleMenu()">☰</span>
-        <span class="center">Abbosbek AI</span> 
-    </header>
+<html>
+    <head>
+        <title>Blog Web Sayt</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
 
-    <nav>
-        <a href="#home" onclick="showSection('home')">Bosh Menu</a>
-        <a href="game.html" onclick="showSection('games')">Ko'ngilochar</a>
-        <a href="news.html" onclick="showSection('news')">Yangiliklar</a>
-    </nav>
+    <!--Typing yozish-->    
+        <div class="yozish">
+            <div class="welcome", id="animatsiya">
+                Welcome to My blog 
+            </div>
+        </div>
 
-    <div id="sidebar" class="sidebar">
-        <span class="close-btn" onclick="toggleMenu()">❌</span>
-        <a href="#darkmode" onclick="toggleDarkMode()">Qorong‘i Rejim 🌙 (beta)</a>
-        <p class="Bosh"><a href="https://t.me/zuPREDATOR" target="_blank">Bog'lanish</a></p>
-        <a href="about.html" target="_blank">About</a> 
-        <a href="faq.html" target="_blank">FAQ</a>
-    </div>
-    
-    <section id="home">Bosh menu</section>
-    <section id="games">O‘yinlar sahifasi.</section>
-    <section id="news">Yangiliklar bu yerda chiqadi.</section>
+    <!--O'zim haqimda-->
+        <div class="myabout">
+            <h1 class="hello">Salom Mening ismim Abbosbek Blog Saytimga hush kelibsiz</h1>
 
-    <!-- Bu kod Bosh sahifaning kodi-->
-    <a href="maqsad.html">
-    <button style="
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    ">
-      📌 Sayt Maqsadi
-    </button>
-    </a>
+            <div class="my">
+                <li id="my">O'zim haqimda</li>
+                <li class="balandlik">
+                    Yoshim 18 da.
+                </li>
+                <li class="balandlik">
+                    Men hozirda dasturlashni chuqurroq o'rganmoqdaman.
+                </li>
+                <li class="balandlik">
+                    Hozirda HTML, Python, CSS, Unity engine, Android Studio hamda Java Scriptlarni o'rganib tajribamni oshirmoqdaman.
+                </li>
+                <li class="balandlik">
+                    Bu mening shaxsiy blogim, bu yerda o‘z loyihalarimni va fikrlarimni baham ko‘raman.
+                </li>
+            </div>
+            
+            <hr> 
 
-    <!-- Bu Game menuning kodi-->
-     
+            <!-- Tajribam -->
+            <div class="experience">
+                <li id="my">Tajribalarim</li>
+                <li class="balandlik">
+                    Unity engine   
+                    <div class="progres-bar">
+                        <div class="progres" style="width: 72%;"></div>
+                    </div>
+                </li>
+                <li class="balandlik">
+                    HTML
+                    <div class="progres-bar">
+                        <div class="progres" style="width: 26%;"></div>
+                    </div>
+                </li>
+                <li class="balandlik">
+                    CSS 
+                    <div class="progres-bar">
+                        <div class="progres" style="width: 29%;"></div>
+                    </div>
+                </li>
+                <li class="balandlik">
+                    Python
+                    <div class="progres-bar">
+                        <div class="progres" style="width: 44%;"></div>
+                    </div>
+                </li>
+                <li class="balandlik">
+                    JavaScript
+                    <div class="progres-bar">
+                        <div class="progres" style="width: 11%;"></div>
+                    </div>
+                </li>
+                <li class="balandlik">
+                    Android Studio
+                    <div class="progres-bar">
+                        <div class="progres" style="width: 33%;"></div>
+                    </div>
+                </li>
+                <li class="balandlik">
+                    Dasturlashdagi darajam esa hozircha "E" (Beginner)
+                </li>
+            </div>
+        </div>
 
-    <script>
-        // Sektsiyalarni ko'rsatish va yashirish
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-                section.style.display = "none"; 
-            });
-
-            const activeSection = document.getElementById(sectionId);
-            activeSection.style.display = "block";
-            setTimeout(() => {
-                activeSection.classList.add('active');
-            }, 10);
-
-            window.location.hash = sectionId; 
-        }
-
-        // Sidebar menyuni ochish/yopish
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar.style.left === '0px') {
-                sidebar.style.left = '-250px';
-            } else {
-                sidebar.style.left = '0px';
-            }
-        }
-
-        // Qorong'u rejimni o'zgartirish
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        // Sahifa yuklanganda avtomatik ravishda sektsiyani ko'rsatish
-        window.onload = function () {
-            let sectionId = window.location.hash.substring(1) || 'home';
-            showSection(sectionId);
-        };
-    </script>
-</body>
+        <footer>
+            <div class="footeryordamchi">
+                <p class="name"><strong>Yaratuvchi:</strong> Abbosbek Qo'shmoqboyev</p>
+                <p class="name"><strong>Sana:</strong> 2025.04.23 </p>
+                <p><strong>Telefon:</strong> <a href="tel:+998917355223">  +998 91 735 52 23</a></p>
+                <p><strong>Telegram:</strong> <a href="https://t.me/zuPREDATOR"> Telegramdan bog'lanish</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/abbosbek_0223"> Instagram</a></p>    
+            </div>
+        </footer>
+    </body>
 </html>
