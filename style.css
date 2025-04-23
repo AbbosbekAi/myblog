@@ -1,102 +1,140 @@
+/* Kodning boshi */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500vh;
+    background-color: white;
+}
+
+/* Welcomeni barcha stylelari */
+.welcome {
+    color: rgb(179, 161, 20);
+    font-size: 5vw;
+    font-family: monospace;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 3px solid black;
+    animation: typing 5s steps(50) infinite alternate, blink 0.7s infinite;
+    display: block;
+    margin-top: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+.yozish {
+    min-height: 2em;
     text-align: center;
 }
 
-header {
-    background: #333;
-    color: white;
-    padding: 15px;
-    font-size: 20px;
-    display: flex;
+
+@keyframes typing {
+    from {width: 0 }
+    to {width: 19ch }
+}
+
+@keyframes blink {
+    0%, 100% {border-color: transparent;}
+    50% {border-color: blue;}
+}
+
+/* Salom text style */
+.hello {
+    margin-top: 150px;
+    color: rgb(31, 3, 113);
+    font-size: 3.8vw;
+    font-family:  monospace;
+    font-style: italic;
+    text-align: center;
+    
+}
+
+/* O'zim haqimda Style joyi */
+.my {
+    margin-top: 50px;
+    font-family: monospace;
+    font-size: 2vw;
+    text-align: center;
+    color: black;
+}
+
+#my {
+    color: rgb(31, 3, 113);
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+
+/* Tajribam style joyi */
+.experience {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 2vw;
+    margin-top: 75px;
+    font-family: monospace;
     justify-content: space-between;
-    align-items: center;
 }
 
-.menu-icon {
-    font-size: 24px;
-    cursor: pointer;
+.tajriba {
+    color: black;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    background: #222;
-    padding: 10px;
-}
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    background: #444;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background: #666;
-}
-
-.sidebar {
-    position: fixed;
-    left: -250px;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background: #494848;
-    padding-top: 60px;
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.sidebar a {
-    display: block;
-    color: white;
-    padding: 15px;
-    text-decoration: none;
-    text-align: left;
-}
-
-.sidebar a:hover {
-    background: #575757;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
-
-.dark-mode {
-    background: #222;
-    color: white;
-}
-
-section {
-    display: none;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    padding: 20px;
-    background: white;
+/* Progres % Stili */
+.progres-bar {
+    width: auto;
+    height: 4px;
+    background-color: rgb(161, 159, 159);
     border-radius: 10px;
-    margin: 20px auto;
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    margin: 1px 0;
+    overflow: hidden;
+    text-align: center;
 }
 
-section.active {
-    display: block;
-    opacity: 1;
-    transform: translate(0);
+.progres {
+    text-align: center;
+    height: 100%;
+    background-color: blue;
+    transition: width 0.5s ease;
 }
 
+
+/* Sozlama */
+.balandlik {
+    margin-top: 20px;
+}
+
+/* Footer uchun style */
+footer {
+    background-color: grey;
+    color: black;
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    height: 17%;
+    margin-top: 380px;
+}
+
+.footeryordamchi {
+    max-width: 1200px;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 25px 0;
+}
+
+footer a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
